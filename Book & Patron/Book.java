@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Book {
     private String title;
     private String author;
@@ -16,12 +14,13 @@ public class Book {
     public String getAuthor() {
         return author;
     }
-
+    
     public boolean equals(Object book) {
-        return ((Book)book).getTitle() == title && (((Book)book).getAuthor() == author);
+        Book temp = (Book)book;
+        return (temp.getTitle() == title && temp.getAuthor() == author);
     }
 
     public String toString() {
-        return "Title :" + title + ". Author: " + author + ".";
+        return "Title: " + title + " Author: " + author;
     }
 }
